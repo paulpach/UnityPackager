@@ -7,6 +7,7 @@
     <PackageId>UnityPackager</PackageId>
     <PackageVersion>1.0.0</PackageVersion>
     <Description>Generates a unity package without requiring unity editor</Description>
+    <TargetLatestRuntimePatch>true</TargetLatestRuntimePatch>
   </PropertyGroup>
 
   <ItemGroup>
