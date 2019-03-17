@@ -33,7 +33,9 @@ install:
       echo "Version is $app_version version is $version build is $build"
 
 build_script:
-  - cmd: dotnet publish -f netcoreapp2.1
+  - cmd: dotnet publish -f netcoreapp2.1  -r win-x64
+  - cmd: choco pack
+  - cmd: choco install unitypacker -s .
 
 test_script: 
   - cmd: dotnet test -f netcoreapp2.1
