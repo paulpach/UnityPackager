@@ -41,8 +41,7 @@ test_script:
   - cmd: choco install unitypackager -s .
 
 deploy_script:
-  - ps: |
-    semantic-release
+  - ps: semantic-release
     
 
 skip_tags: true
