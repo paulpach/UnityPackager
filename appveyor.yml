@@ -36,7 +36,6 @@ build_script:
   - cmd: dotnet publish -f netcoreapp2.1  -r win-x64
   - cmd: choco pack
   
-
 test_script: 
   - cmd: dotnet test -f netcoreapp2.1
   - cmd: choco install unitypackager -s .
