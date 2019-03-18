@@ -41,7 +41,7 @@ test_script:
   - cmd: choco install unitypackager -s .
 
 deploy_script:
-  - ps: 
+  - ps: |
     semantic-release
     
 
