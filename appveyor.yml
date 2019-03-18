@@ -43,8 +43,8 @@ test_script:
 
 deploy_script:
   - ps: |
-    if (semantic-release) {
-      echo "deployed application"
+    if ($app_version -ne "0.0.1") {
+      semantic-release
     }
 
 skip_tags: true
