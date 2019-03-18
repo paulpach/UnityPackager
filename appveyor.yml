@@ -42,8 +42,8 @@ test_script:
   - cmd: choco install unitypackager -s .
 
 deploy_script:
-  - ps: |-
-    semantic-release
+  - semantic-release
+  - ps: choco push --source https://chocolatey.org/ -k $CHOCO_KEY
     
 skip_tags: true
 
