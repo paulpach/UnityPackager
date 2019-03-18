@@ -39,12 +39,11 @@ build_script:
 test_script: 
   - cmd: dotnet test -f netcoreapp2.1
   - cmd: choco install unitypackager -s .
-  - cmd: UnityPackager
 
 deploy_script:
-  - ps: semantic-release
+  - ps: |
+    semantic-release
     
-
 skip_tags: true
 
 on_finish:
