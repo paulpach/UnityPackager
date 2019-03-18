@@ -41,10 +41,9 @@ test_script:
   - cmd: choco install unitypackager -s .
 
 deploy_script:
-  - ps: |
-    if ($app_version -ne "0.0.1") {
-      semantic-release
-    }
+  - ps: 
+    semantic-release
+    
 
 skip_tags: true
 
