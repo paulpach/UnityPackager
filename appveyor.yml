@@ -43,7 +43,7 @@ test_script:
 
 deploy_script:
   - semantic-release
-  - ps: choco push --source https://chocolatey.org/ -k $CHOCO_KEY
+  - ps: choco push --source https://chocolatey.org/ -k $env:CHOCO_KEY
     
 skip_tags: true
 
