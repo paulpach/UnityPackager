@@ -42,11 +42,13 @@ build_script:
 after_build:
   - 7z a UnityPackager.zip UnityPackager\bin\Debug\netcoreapp2.1\win-x64\publish\*.*
   - cmd: choco install unitypackager -s .
-  - cmd: UnityPackager pack sample.unitypackage sampletree\Mirror Assets/Mirror
+
+  - cmd: git clone https://github.com/vis2k/Mirror.git
+  - cmd: UnityPackager pack Mirror.unitypackage Mirror\Assets\Mirror Assets/Mirror
 
 artifacts:
   - path: UnityPackager.zip
-  - path: sample.unitypackage
+  - path: Mirror.unitypackage
 
 test_script: 
   - cmd: dotnet test -f netcoreapp2.1
