@@ -41,13 +41,16 @@ build_script:
   
 after_build:
   - 7z a UnityPackager.zip UnityPackager\bin\Debug\netcoreapp2.1\win-x64\publish\*.*
+  - cmd: choco install unitypackager -s .
+  - cmd: UnityPackager pack sample.unitypackage sampletree\Mirror Assets/Mirror
 
 artifacts:
   - path: UnityPackager.zip
+  - path: sample.unitypackage
 
 test_script: 
   - cmd: dotnet test -f netcoreapp2.1
-  - cmd: choco install unitypackager -s .
+
 
 deploy_script:
   - semantic-release
